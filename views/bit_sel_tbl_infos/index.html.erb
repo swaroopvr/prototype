@@ -1,0 +1,33 @@
+
+
+<% breadcrumb :root %>
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF BIT_SEL COMMANDS</caption>
+		<thead>
+			<tr>
+				<th> BIT_SEL_TBL_NO </th>
+				<th> BIT_SEL_TBL_NAME </th>
+
+			</tr>
+		</thead>
+<tbody>
+<% @bit_infos.each do |f| %>
+	<tr class="theShower text-center">
+		
+		<td><%= f.BIT_SEL_TBL_NO  %></td>
+				<td><%= f.BIT_SEL_TBL_NAME %></td>
+			
+		</tr>	
+		<% end %>
+		</tbody>
+	</table>
+
+	</div>
+
+
+<%= link_to 'New', new_bit_sel_tbl_info_path %>

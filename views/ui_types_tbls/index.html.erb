@@ -1,0 +1,28 @@
+<% breadcrumb :root %>
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF UI_TYPES</caption>
+		<thead>
+			<tr>
+				<th> UI_TYPES ID</th>
+				<th> UI_TYPES </th>
+
+			</tr>
+		</thead>
+<tbody>
+<% @ui_types.each do |f| %>
+	<tr class="theShower text-center">
+		
+			<td><%= f.UI_TYPE_ID %></td>
+				<td><%= f.UI_TYPE  %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	</div>
+
+<%= link_to 'New', new_ui_types_tbl_path %>

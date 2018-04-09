@@ -1,0 +1,36 @@
+<% breadcrumb :preconf_index, [@base_cmds,@prereqs]%>
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF PREREQ_CONF_EXPR</caption>
+		<thead>
+			<tr>
+				<th>  CMD_ID </th>
+				<th> ENTRY_TYPE </th>
+				<th>   FIELD_NO  </th>
+				<th> EXPR_ID</th>
+				<th> LOGICAL_OP   </th>
+				
+
+			</tr>
+		</thead>
+<tbody>
+
+<% @prereqs.each do |f| %>
+	<tr class="theShower text-center">
+		
+			<td><%= f.CMD_ID %></td>
+				<td><%= f.ENTRY_TYPE %></td>
+				<td><%= f.FIELD_NO   %></td>
+				
+			    <td><%= f.EXPR_ID %></td>
+				<td><%= f.LOGICAL_OP %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	</div>
+
+<%= link_to 'New', new_prereq_conf_expr_tbl_path %>

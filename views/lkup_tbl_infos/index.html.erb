@@ -1,0 +1,32 @@
+<% breadcrumb :root %>
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF LKUP_TBL_INFO</caption>
+		<thead>
+			<tr>
+				<th>  LKUP_TBL_NO </th>
+				<th> LKUP_TBL_NAME </th>
+				<th> LKUP_TBL_TYPE   </th>
+				
+			</tr>
+		</thead>
+<tbody>
+<% @lkup_infos.each do |f| %>
+	<tr class="theShower text-center">
+		
+			<td><%= f.LKUP_TBL_NO%></td>
+				<td><%= f.LKUP_TBL_NAME %></td>
+				<td><%= f.LKUP_TBL_TYPE   %></td>
+				
+				</tr>
+		<% end %>
+		</tbody>
+	</table>
+	</div>
+
+
+<%= link_to 'New', new_lkup_tbl_info_path %>

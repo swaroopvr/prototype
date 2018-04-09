@@ -1,0 +1,29 @@
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF CMD_PART_TYPES</caption>
+		<thead>
+			<tr>
+				<th> CMD_PART_TYPE_ID</th>
+				<th> CMD_PART_TYPE </th>
+
+			</tr>
+		</thead>
+<tbody>
+
+<% @cmd_part_types.each do |f| %>
+	<tr class="theShower text-center">
+		
+			<td><%=f.CMD_PART_TYPE_ID%></td>
+			<td><%=f.CMD_PART_TYPE%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+	</div>
+
+
+<%= link_to 'New', new_cmd_part_types_tbl_path %>

@@ -1,0 +1,38 @@
+<% breadcrumb :root %>
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF EXPRESSIONS</caption>
+		<thead>
+			<tr>
+				<th>  EXPR_ID </th>
+				<th> EXPR_TYPE  </th>
+				<th>  TM_PID  </th>
+				<th> REL_OP </th>
+				<th> VALUE   </th>
+				<th> VALUE_TYPE  </th>
+
+			</tr>
+		</thead>
+<tbody>
+
+<% @exprs.each do |f| %>
+	<tr class="theShower text-center">
+		
+			<td><%= f.EXPR_ID %></td>
+				<td><%= f.EXPR_TYPE%></td>
+				<td><%= f.TM_PID   %></td>
+				<td><%= f.REL_OP  %></td>
+				<td><%= f.VALUE  %></td>
+				<td><%= f.VALUE_TYPE%></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	</div>
+
+
+<%= link_to 'New', new_expression_path %>

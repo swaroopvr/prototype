@@ -1,0 +1,30 @@
+<% breadcrumb :root %>
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF CONFIRMER</caption>
+		<thead>
+			<tr>
+				<th>  POSITION</th>
+				<th> NAME </th>
+
+			</tr>
+		</thead>
+<tbody>
+
+<% @confs.each do |f| %>
+	<tr class="theShower text-center">
+		
+						<td><%= f.POSITION %></td>
+				<td><%= f.NAME  %></td>
+			</tr>
+  			<% end %>
+				</tbody>
+	</table>
+	</div>
+
+
+<%= link_to 'New', new_confirmer_tbl_path %>

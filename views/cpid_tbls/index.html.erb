@@ -1,0 +1,35 @@
+<% content_for(:option_bar) do %>
+	<%= render 'shared/option_list' %>
+<% end %>
+<div class="table-view">
+	<table>
+		<caption>LIST OF CP_IDS</caption>
+		<thead>
+			<tr>
+				<th> CMD_ID</th>
+				<th> CPID  </th>
+				<th> CPID_DESC</th>
+				<th> TM_VAL   </th>
+				<th> TM_COUNT</th>
+				<th> PROC_TYPE  </th>
+
+			</tr>
+		</thead>
+<tbody>
+
+<% @cpids.each do |f| %>
+	<tr class="theShower text-center">
+		
+			<td><%=f.CPID_DESC%></td>
+			<td><%=f.CPID_DESC%></td>
+			<td><%=f.CPID_DESC%></td>
+			<td><%=f.CPID_DESC%></td>
+			<td><%=f.CPID_DESC%></td>
+			<td><%=f.CPID_DESC%></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	</div>
+
+<%= link_to 'New', new_cpid_tbl_path %>
